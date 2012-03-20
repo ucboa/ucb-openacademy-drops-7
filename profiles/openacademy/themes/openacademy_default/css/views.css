@@ -1,0 +1,44 @@
+
+/**
+ * General Views Styling
+ */
+.views-row {
+  margin-bottom: 1em;
+}
+
+.views-row-last {
+  padding-bottom: 0em;
+}
+
+.views-field-title {
+  line-height: 1.2em;
+  margin: 5px 0;
+}
+.views-field-title a {
+  color: black;
+}
+
+/**
+ * Unformatted Views Style Plugin
+ *
+ * The default style is provided by the Views module
+ */
+
+/**
+ * Table Views Style Plugin
+ *
+ * The default style is provided by the Views module
+ *
+ */
+
+/**
+ * Grid Views Style Plugin
+ *
+ * The default style is provided by the Views module
+ */
+
+/**
+ * Slideshow Style Plugin
+ *
+ * The default style is provided by the Views Slideshow module
+ */
