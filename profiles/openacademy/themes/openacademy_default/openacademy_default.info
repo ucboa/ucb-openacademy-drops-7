@@ -4,9 +4,9 @@ screenshot  = screenshot.png
 core        = 7.x
 
 ; Fonts
-fonts[fontsquirrel][] = "bree-serif"
-fonts[fontsquirrel][] = "news-cycle"
-fonts[fontsquirrel][] = "open-sans"
+; fonts[fontsquirrel][] = "bree-serif"
+; fonts[fontsquirrel][] = "news-cycle"
+; fonts[fontsquirrel][] = "open-sans"
 
 ; CSS - General
 stylesheets[all][]     = css/defaults.css
