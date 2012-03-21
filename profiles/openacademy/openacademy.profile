@@ -25,7 +25,6 @@ function openacademy_install_tasks($install_state) {
       'panopoly_images',
       'panopoly_magic',
       'panopoly_pages',
-      'panopoly_search',
       'panopoly_theme',
       'panopoly_widgets',
       'panopoly_wysiwyg',
