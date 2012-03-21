@@ -2,6 +2,13 @@
  * Fonts 
  */
 
+p, 
+div, 
+.view-openacademy-people .views-field-field-person-position, 
+.view-openacademy-people .views-field-field-tags a {
+  font-family: 'NewsCycleRegular';
+}
+
 h1, 
 h2, 
 h3, 
@@ -24,15 +31,13 @@ div.tabs ul.secondary li,
 .panopoly-spotlight-info p, .views-field-title,
 .pane-menu-tree ul,
 .pager,
-.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td {
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td,
+#menu-and-search-mobile,
+#menu-mobile-controller,
+div#menu-mobile-controller-inner,
+#mobile-show-menu #primary,
+#header #site-name-mobile a {
   font-family: 'BreeSerifRegular';
-}
-
-p, 
-div, 
-.view-openacademy-people .views-field-field-person-position, 
-.view-openacademy-people .views-field-field-tags a {
-  font-family: 'NewsCycleRegular';
 }
 
 /* General styles */
@@ -46,6 +51,7 @@ div,
   -moz-box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);
   -webkit-box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);
   box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);
+  margin-bottom: -32px;
 }
 
 /* Panopoly Styles */
@@ -64,7 +70,7 @@ div,
 
 .pane-bundle-spotlight .panopoly-spotlight-info {
   color: #FFF;
-  padding: 7px 20px;
+  padding: 7px 20px 12px 20px;
 }
 
 .pane-bundle-spotlight .panopoly-spotlight-info h2 a {
@@ -100,30 +106,4 @@ div,
 
 .pane-bundle-spotlight .ui-tabs .ui-tabs-nav li.ui-corner-top.ui-state-hover {
   background-color: #2C95C8;
-}
-
-/* Sticky footer */
-/* http://www.cssstickyfooter.com */
-
-html, body {height: 100%;}
-
-#page {min-height: 100%;}
-
-#main {
-  overflow: auto;
-  padding-bottom: 230px;}  /* must be same height as the footer */
-
-#footer {
-  position: relative;
-  margin-top: -230px; /* negative value of footer height */
-  height: 230px;
-  clear: both;} 
-
-/*Opera Fix*/
-body:before {
-  content: "";
-  height: 100%;
-  float: left;
-  width: 0;
-  margin-top: -32767px;/
 }

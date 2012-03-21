@@ -1,4 +1,23 @@
 <?php
+/**
+ * Implementation of hook_css_alter().
+ *
+function openacademy_wireframe_css_alter(&$css) {
+  if (module_exists('panopoly_admin')) {
+    // Installs the jquery.ui themeroller theme to the theme.
+    if (isset($css['misc/ui/jquery.ui.theme.css'])) {
+      $css['misc/ui/jquery.ui.theme.css']['data'] = drupal_get_path('module', 'panopoly_admin') . '/jqueryui/panopoly-theme/panopoly-jquery-ui-theme.css';
+    }
+    
+    if (isset($css['misc/ui/jquery.ui.dialog.css'])) {
+      unset($css['misc/ui/jquery.ui.dialog.css']);
+    }
+    
+    if (isset($css['misc/ui/jquery.ui.tabs.css'])) {
+      unset($css['misc/ui/jquery.ui.tabs.css']);
+    }
+  }
+}/**/
 
 /**
  * Implementation of hook_preprocess_page()

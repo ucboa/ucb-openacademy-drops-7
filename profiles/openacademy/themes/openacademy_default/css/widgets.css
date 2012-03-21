@@ -90,6 +90,10 @@
   text-decoration: none;
 }
 
+  .pane-menu-tree ul li a.active-trail:hover {
+    color: white;
+  }
+
   .pane-menu-tree ul li.active a:hover,
   .pane-menu-tree ul li.active a:active {
     background-color: #111;

@@ -17,6 +17,7 @@
  
 .pane-openacademy-events-monthly-mini-calendar {
   background-color: #333;
+  padding-top: 5px;
 }
 
 .pane-openacademy-events-monthly-mini-calendar .view .date-nav-wrapper {
@@ -29,19 +30,34 @@
 }
 
 .pane-openacademy-events-monthly-mini-calendar .view .date-nav-wrapper .date-nav ul.pager {
-  width: 100%;
+  text-align: left;
 }
 
 .view .date-nav-wrapper .date-prev,
 .view .date-nav-wrapper .date-next {
   background-color: transparent;
+  margin-top: 4px;
 }
 
 .view .date-nav-wrapper .date-prev {
   left: 0;
+  text-align: left;
+  margin-left: 0;
 }
 
-.pane-openacademy-events-monthly-mini-calendar .view .date-nav-wrapper .item-list ul{
+.view .date-nav-wrapper .date-prev a {
+  background: #333 url('../images/arrow-left.png') center center no-repeat;
+  padding: 4px 8px;
+  color: transparent;
+}
+
+.view .date-nav-wrapper .date-next a {
+  background: #333 url('../images/arrow-right.png') center center no-repeat;
+  padding: 4px 8px;
+  color: transparent;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .view .date-nav-wrapper .item-list ul {
   margin-bottom: 0;
 }
 
@@ -55,8 +71,8 @@
   color: #333;
   border: 3px solid #333;
   text-align: center;
-  padding-top: 5px;
-  padding-bottom: 0;
+  padding-top: 3px;
+  padding-bottom: 2px;
 }
 
 .pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini th.days {
@@ -69,7 +85,32 @@
   font-weight: bold;
 }
 
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td.empty {
+  background-color: #999999;
+}
 
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td.has-events {
+  background-color: #009CC8;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td.today {
+  -moz-box-shadow: inset 0 0 3px 3px #CCC;
+  -webkit-box-shadow: inset 0 0 3px 3px #CCC;
+  box-shadow: inset 0 0 3px 3px #CCC;
+  background-color: #FFF;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td.has-events.today {
+  -moz-box-shadow: inset 0 0 3px 3px #006F8E;
+  -webkit-box-shadow: inset 0 0 3px 3px #006F8E;
+  box-shadow: inset 0 0 3px 3px #006F8E;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td.has-events a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 /**
  * Breadcrumbs

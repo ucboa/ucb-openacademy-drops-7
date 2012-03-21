@@ -512,7 +512,6 @@ img.openacademysaurus {
 
 #apps-profile-apps-select-form #edit-apps .form-type-checkbox label {
   font-size:20px;
-  line-height:25px;
   font-weight:bold;
 }
 
@@ -558,6 +557,13 @@ img.openacademysaurus {
 #edit-apps-fieldset legend span {
   position:static;
   top:auto;
+}
+
+/**
+ * Enable Apps Support
+ */
+#openacademy-apps-check > div > p {
+  padding-bottom: 1em;
 }
 
 /**

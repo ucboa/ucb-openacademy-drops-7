@@ -12,8 +12,14 @@
 
 <div id="header" class="clearfix">
 
-  <?php if ($main_menu || $search_box): ?>
+  <?php if ($site_name || $main_menu || $search_box): ?>
     <div id="menu-and-search-mobile">
+			<?php if ($site_name): ?>
+          <div id="site-name-mobile">
+            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a>
+          </div>
+      <?php endif; ?>
+      
       <?php if ($main_menu): ?>
         <div id="menu-mobile-controller"><div id="menu-mobile-controller-inner"><?php print t('Menu'); ?></div></div>
       <?php endif; ?>

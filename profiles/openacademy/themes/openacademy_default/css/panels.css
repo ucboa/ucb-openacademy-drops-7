@@ -20,14 +20,18 @@
   -moz-box-shadow: 0 -1px #999;
   -webkit-box-shadow: 0 -1px #999;
   box-shadow: 0 -1px #999;
-/*  margin-top: 1px;*/
 }
 
-.panel-pane.pane-openacademy-publications-publication-listing h2.pane-title {
+.panel-pane.pane-openacademy-publications-publication-listing h2.pane-title,
+.brown-top-region.brown-slider-gutter .panel-pane h2.pane-title {
   border-top: 0;
   box-shadow: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
+}
+
+.brown-top-region.brown-slider-gutter .panel-pane h2.pane-title {
+  padding-top: 0;
 }
 
 .panel-pane .views-row.views-row-first h2 {
@@ -38,12 +42,12 @@
  * Background Callout
  */
 .pane-background-callout {
-  background-color: #FFF;
+  background-color: #E6E6E6;
   padding: 1em;
 }
 
 .region-background-callout {
-  background-color: #FFF;
+  background-color: #E6E6E6;
   padding: 1em;
 }
 
@@ -77,4 +81,8 @@
  */
 .burr-flipped-sidebar.burr-flipped-content-region .region-background-callout {
   margin-top: 8px;
+}
+
+.burr-sidebar .pane-node-field-event-address iframe {
+  width: 270px;
 }

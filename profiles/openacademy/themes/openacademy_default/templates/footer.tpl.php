@@ -12,7 +12,7 @@
 
 <?php if (isset($footer_menu) || $contact_information || $social_links || $seal || $page['footer']): ?>
   <div id="footer" class="clearfix">
-		<div id="footer-inner" class="clearfix">
+		<div id="footer-inner">
     <?php print render($page['footer']); ?>
 
     <?php if ($seal || $contact_information) : ?>
@@ -75,5 +75,5 @@
     <?php endif; ?>
 
 		</div>
-  </div> <!-- /footer -->
+  </div><!-- /footer -->
 <?php endif; ?>

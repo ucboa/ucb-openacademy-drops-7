@@ -22,6 +22,10 @@
   float: left;
   margin-right: 10px;
 }
+
+#header #site-name-mobile {
+  display: none;
+}
   
 #site-name {
   font-size: 2em; /* 14 -> 28px */
@@ -65,16 +69,42 @@
     -moz-box-shadow: 0 0 transparent;
     -webkit-box-shadow: 0 0 transparent;
     box-shadow: 0 0 transparent;
+    min-height: 50px;
+  }
+  
+  body.not-front #header #logo,
+  body.not-front #header #site-name,
+  .secondary-nav-bg,
+  .breadcrumb {
+    display: none;
   }
 
   #header #menu-and-search-mobile {
     position: relative;
     display: block;
     color: #FFF;
-    border-bottom: 1px solid #000;
-    height: 50px;
+    height: 47px;
     text-transform: uppercase;
   }
+  
+    #header #site-name-mobile {
+      display: block;
+    }
+    
+    #header #site-name-mobile a {
+      font-size: 1.2em;
+      width: 150px;
+      display: block;
+      padding: 3px 10px;
+      color: #333;
+      font-weight: normal;
+      text-transform: none;
+    }
+    
+    #header #site-name-mobile a:hover {
+      text-decoration: none;
+      color: #2C95C8;
+    }
   
     #header #menu-mobile-controller {
       background: #404040;
@@ -90,6 +120,8 @@
         color-stop(0, #343434),
         color-stop(1, #4C4C4C)
       );
+      background: #2C95C8;
+      background-image: url('../images/blue-texture-background.png');
     }
     
       #header #menu-mobile-controller:active,
@@ -107,6 +139,7 @@
           color-stop(0, #1A1A1A),
           color-stop(1, #333333)
         );
+        background-image: url('../images/blue-texture-background.png');
       }
       
       #header #menu-mobile-controller:active,
@@ -117,21 +150,23 @@
 
   #header #menu-mobile-controller {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 180px;
+    top: -3px;
     z-index: 2;
     width: 100%;
-    font: bold 18px/50px 'Open Sans', 'Lucida Sans', 'Lucida Grande', verdana sans-serif;
+    font: normal 18px/50px 'BreeSerifRegular', 'Open Sans', 'Lucida Sans', 'Lucida Grande', verdana sans-serif;
   }
   
     #header #menu-mobile-controller-inner {
       padding: 0 20px;
+      font-weight: normal;
+      text-transform: capitalize;
     }
 
   #header #search-mobile-controller {
     position: absolute;
     right: 0;
-    top: 0;
+    top: -3px;
     z-index: 3;
     padding: 0;
     text-align: left;
@@ -288,8 +323,8 @@
   }
   
     #primary li {
-      border-top: 1px solid #000;
-      border-bottom: 1px solid #999;
+      border-top: 1px solid #FFF;
+/*      border-bottom: 1px solid #999;*/
       display: block;
       margin: 0;
       padding: 0;
@@ -306,7 +341,7 @@
         color: #fff;
         display: block;
         padding: 0 20px;
-        font: bold 18px/57px 'Open Sans', 'Lucida Sans', 'Lucida Grande', verdana sans-serif;
+        font: normal 18px/57px 'BreeSerifRegular', 'Open Sans', 'Lucida Sans', 'Lucida Grande', verdana sans-serif;
         background: #404040;
         background-image: linear-gradient(bottom, #343434 0%, #4C4C4C 100%);
         background-image: -o-linear-gradient(bottom, #343434 0%, #4C4C4C 100%);
@@ -320,12 +355,13 @@
           color-stop(0, #343434),
           color-stop(1, #4C4C4C)
         );
+        background-image: url('../images/blue-texture-background.png');
       }
       
       #primary li a:hover,
       #primary li a:active,
       #primary li a.active {
-        color: red;
+        color: white;
         background: #282828;
         background-image: linear-gradient(bottom, #1A1A1A 0%, #333333 100%);
         background-image: -o-linear-gradient(bottom, #1A1A1A 0%, #333333 100%);
@@ -339,6 +375,7 @@
           color-stop(0, #1A1A1A),
           color-stop(1, #333333)
         );
+        background: #3E3E3E;
       }
 }
 
@@ -390,7 +427,7 @@
   display: block;
   float: left;
   margin-right: 35px;
-  padding-bottom: 7px;
+  padding-bottom: 8px;
 }
 
 #secondary li.last a {
@@ -419,6 +456,7 @@
   right: 0;
   top: 45px;
   display: block;
+  width: 215px;
 }
   
 #search #search-form {
@@ -483,7 +521,7 @@
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-    font: normal 18px/18px 'Open Sans', 'Lucida Sans', 'Lucida Grande', verdana sans-serif;
+    font: normal 18px/18px 'BreeSerifRegular', 'Open Sans', 'Lucida Sans', 'Lucida Grande', verdana sans-serif;
     height: 50px;
     max-height: 50px;
     padding: 2px 20px 0 20px;
@@ -496,7 +534,6 @@
     background-image: -moz-linear-gradient(bottom, #DADADA 0%, #FEFEFE 100%);
     background-image: -webkit-linear-gradient(bottom, #DADADA 0%, #FEFEFE 100%);
     background-image: -ms-linear-gradient(bottom, #DADADA 0%, #FEFEFE 100%);
-    
     background-image: -webkit-gradient(
     linear,
     left bottom,

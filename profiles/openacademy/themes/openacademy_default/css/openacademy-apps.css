@@ -43,3 +43,18 @@
 .view-openacademy-people .views-field-field-tags {
   line-height: 1.2em;
 }
+
+@media only screen and (max-width: 480px) {
+  .view-openacademy-people .panopoly-image-square {
+    width: 90px;
+    height: 90px;
+  }
+  .view-openacademy-news.view-display-id-featured_news .phelan-container.phelan-column-content .phelan-column2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .view-openacademy-courses.view-display-id-courses_table {
+    font-size: 0.8em;
+  }
+}
