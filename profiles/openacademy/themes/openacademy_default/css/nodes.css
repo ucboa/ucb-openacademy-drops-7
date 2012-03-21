@@ -20,3 +20,16 @@
 .node-featured {
   background-color: #FFF;
 }
+
+.node-featured .content-title {
+  margin-bottom: 1em;
+}
+
+.node-featured .pane-node-field-featured-image,
+.node-featured .phelan-container {
+  margin-bottom: 0em;
+}
+
+.node-featured .pane-title {
+  margin-top: 1em;
+}
