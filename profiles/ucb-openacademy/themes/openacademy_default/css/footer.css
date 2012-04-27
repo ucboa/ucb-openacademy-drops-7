@@ -1,0 +1,211 @@
+/** 
+ * General layout
+ */
+
+#footer {
+  margin-top: 2em;
+  background-color: #333;
+  color: #fff;
+  padding: .5em;
+  clear: both;
+}
+
+#menu-and-social {
+  float: right;
+  margin-right: 1em;
+}
+
+#social-links {
+  float: right;
+  margin-left: 3em;
+}
+
+#seal-and-contact {
+  float: left;
+}
+
+#footer-seal {
+  margin: .5em 1em 1em 1em;
+  float: left;
+}
+
+.footer {
+  float: right;
+}
+
+#contact-information {
+  float: left;
+  font-size: .8em;
+  line-height: 1.3em;
+}
+
+#contact-information p {
+  margin: .5em 0em;
+} 
+
+#contact-information .site-name {
+  font-weight: bold;
+}
+
+/**
+ * General styles - Mobile
+ */
+@media only screen and (max-width: 480px) {
+  #footer {
+    margin-top: 0em;
+    height: 400px;
+  }
+
+  #footer-seal {
+    display: none;
+  }
+
+  #seal-and-contact {
+    float: none;
+    clear: both;
+    padding-left: 20px;
+  }
+
+  #menu-and-social {
+    float: left;
+    clear: both;
+    margin-top: 1em;
+    border-top: 1px solid #fff;
+    -moz-box-shadow: 0 -1px #999;
+    -webkit-box-shadow: 0 -1px #999;
+    box-shadow: 0 -1px #999;
+    margin-right: 0;
+    width: 100%;
+    padding-left: 20px;
+  }
+
+#social-links {
+  margin-left: 0em;
+  float: right;
+  width: 45%;
+}
+
+  .footer {
+    float: left;
+    width: 45%;
+  }
+
+}
+
+/**
+ * Footer menu styles
+ */
+
+#social-links ul,
+#footer-menu.links {
+  list-style-type: none;
+  float: right;
+  padding: 3px 10px;
+  margin: 0;
+  font-size: .8em;
+}
+
+#social-links a,
+#footer-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+#social-links ul {
+  list-style-type: square;
+}
+
+@media only screen and (max-width: 480px) {
+  #footer-menu.links,
+  #social-links ul {
+   float: none;
+  } 
+}
+
+#footer-inner {
+  margin: 0 auto;
+  max-width: 940px;  
+}
+
+#footer-seal {
+  margin-left: 0;
+}
+
+#menu-and-social {
+  margin-right: 0;
+}
+
+h4.block-title,
+#contact-information h4.block-title.site-name {
+  color: #7EC12A;
+  text-shadow: none;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+#contact-information h4.block-title.site-name {
+  margin-bottom: 15px;
+}
+
+#footer #contact-information {
+  margin-left: 120px;
+}
+
+  @media only screen and (max-width: 480px) {
+    #footer #contact-information {
+      margin-left: 0;
+    }
+  }
+
+#footer .footer.menu,
+#social-links {
+  width: 140px;
+  text-align: left;
+}
+
+#social-links ul, 
+#footer-menu.links {
+  float: none;
+  padding-left: 0;
+  padding-top: 0;
+}
+
+#footer .footer.menu li,
+#social-links li {
+  margin-bottom: 0.5em;
+}
+
+#footer .item-list ul {
+  list-style: none;
+}
+
+#footer .item-list ul li {
+  margin-left: 0;
+  margin-bottom: 0.75em;
+}
+
+#social-links .item-list ul li a {
+  background-color: transparent;
+  background-position: left top;
+  background-repeat: no-repeat;
+  padding-left: 35px;
+  min-height: 31px;
+  display: block;
+  vertical-align: bottom;
+  
+}
+
+#social-links .item-list ul li a.rss-link { background-image: url(../images/connect-rss.png); }
+#social-links .item-list ul li a.twitter-link { background-image: url(../images/connect-twitter.png); }
+#social-links .item-list ul li a.facebook-link { background-image: url(../images/connect-facebook.png); }
+#social-links .item-list ul li a.youtube-link { background-image: url(../images/connect-youtube.png); }
+
+#social-links .item-list ul li a.rss-link:hover { background-image: url(../images/connect-rss-hover.png); }
+#social-links .item-list ul li a.twitter-link:hover { background-image: url(../images/connect-twitter-hover.png); }
+#social-links .item-list ul li a.facebook-link:hover { background-image: url(../images/connect-facebook-hover.png); }
+#social-links .item-list ul li a.youtube-link:hover { background-image: url(../images/connect-youtube-hover.png); }
+
+#social-links .item-list ul li a.rss-link:active { background-image: url(../images/connect-rss-active.png); }
+#social-links .item-list ul li a.twitter-link:active { background-image: url(../images/connect-twitter-active.png); }
+#social-links .item-list ul li a.facebook-link:active { background-image: url(../images/connect-facebook-active.png); }
+#social-links .item-list ul li a.youtube-link:active { background-image: url(../images/connect-youtube-active.png); }

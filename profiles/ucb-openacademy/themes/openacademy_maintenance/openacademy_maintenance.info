@@ -1,0 +1,15 @@
+name = Open Academy Maintenance Theme
+description = Install, update and maintenance theme for Open Academy
+core = 7.x
+
+stylesheets[screen][] = css/reset.css
+stylesheets[screen][] = css/font.css
+stylesheets[screen][] = css/style.css
+
+scripts[] = js/script.js
+
+regions[content] = Content
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[sidebar_first] = First sidebar

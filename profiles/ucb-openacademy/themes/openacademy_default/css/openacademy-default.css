@@ -1,0 +1,109 @@
+/**
+ * Fonts 
+ */
+
+p, 
+div, 
+.view-openacademy-people .views-field-field-person-position, 
+.view-openacademy-people .views-field-field-tags a {
+  font-family: 'NewsCycleRegular';
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+th, 
+form label, 
+form input, 
+#site-name, 
+#primary, 
+#secondary, 
+.breadcrumb, 
+div.tabs ul.primary li, 
+div.tabs ul.secondary li, 
+#footer .menu, 
+#footer .item-list, 
+.panopoly-spotlight-info, 
+.field-name-field-basic-spotlight-items a, 
+.panopoly-spotlight-info p, .views-field-title,
+.pane-menu-tree ul,
+.pager,
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td,
+#menu-and-search-mobile,
+#menu-mobile-controller,
+div#menu-mobile-controller-inner,
+#mobile-show-menu #primary,
+#header #site-name-mobile a {
+  font-family: 'BreeSerifRegular';
+}
+
+/* General styles */
+.secondary-nav-bg {
+  background-color: #2C95C8;
+  height: 35px;
+  width: 100%;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  -moz-opacity:0.7;
+  -moz-box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);
+  box-shadow: inset 0px 0px 5px rgba(0,0,0,0.5);
+  margin-bottom: -32px;
+}
+
+/* Panopoly Styles */
+.pane-bundle-spotlight h3.panopoly-spotlight-label {
+  background-color: #2C95C8;
+  opacity: 100;
+  color: #FFF;
+  text-shadow: none;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  width: auto;
+  display: block;
+  padding: 7px 20px;
+/*  max-width: none;*/
+}
+
+.pane-bundle-spotlight .panopoly-spotlight-info {
+  color: #FFF;
+  padding: 7px 20px 12px 20px;
+}
+
+.pane-bundle-spotlight .panopoly-spotlight-info h2 a {
+  color: #FFF;
+  text-shadow: 0 0 0 #000;
+}
+
+.pane-bundle-spotlight .ui-state-active a {
+  color: white;
+}
+
+.pane-bundle-spotlight .ui-tabs .ui-tabs-nav li a {
+  padding: 6px 16px;
+}
+
+.pane-bundle-spotlight .ui-tabs .ui-tabs-nav li.ui-state-default {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 0 !important;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin-left: 10px;
+}
+
+.pane-bundle-spotlight .ui-tabs .ui-tabs-nav li.ui-corner-top.ui-tabs-selected {
+  background-color: #2C95C8;
+}
+
+.pane-bundle-spotlight .ui-tabs .ui-tabs-nav li.ui-corner-top.ui-state-active.ui-state-hover {
+  background-color: #2C95C8;
+}
+
+.pane-bundle-spotlight .ui-tabs .ui-tabs-nav li.ui-corner-top.ui-state-hover {
+  background-color: #2C95C8;
+}

@@ -1,0 +1,298 @@
+/** 
+ * Mini Pager
+ *
+ * The default is provided by Views
+ */
+
+/** 
+ * Full Pager
+ *
+ * The default is provied by Drupal core
+ */
+ 
+/** 
+ * Calendar
+ *
+ */
+ 
+.pane-openacademy-events-monthly-mini-calendar {
+  background-color: #333;
+  padding-top: 5px;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .view .date-nav-wrapper {
+  margin-top: 0;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .view .date-nav-wrapper .date-nav {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .view .date-nav-wrapper .date-nav ul.pager {
+  text-align: left;
+}
+
+.view .date-nav-wrapper .date-prev,
+.view .date-nav-wrapper .date-next {
+  background-color: transparent;
+  margin-top: 4px;
+}
+
+.view .date-nav-wrapper .date-prev {
+  left: 0;
+  text-align: left;
+  margin-left: 0;
+}
+
+.view .date-nav-wrapper .date-prev a {
+  background: #333 url('../images/arrow-left.png') center center no-repeat;
+  padding: 4px 8px;
+  color: transparent;
+}
+
+.view .date-nav-wrapper .date-next a {
+  background: #333 url('../images/arrow-right.png') center center no-repeat;
+  padding: 4px 8px;
+  color: transparent;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .view .date-nav-wrapper .item-list ul {
+  margin-bottom: 0;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .view-header,
+.pane-openacademy-events-monthly-mini-calendar .view-header a {
+  color: white;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini th,
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td {
+  color: #333;
+  border: 3px solid #333;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 2px;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini th.days {
+  background-color: #333;
+  color: white;
+  font-weight: normal;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td {
+  font-weight: bold;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td.empty {
+  background-color: #999999;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td.has-events {
+  background-color: #009CC8;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td.today {
+  -moz-box-shadow: inset 0 0 3px 3px #CCC;
+  -webkit-box-shadow: inset 0 0 3px 3px #CCC;
+  box-shadow: inset 0 0 3px 3px #CCC;
+  background-color: #FFF;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td.has-events.today {
+  -moz-box-shadow: inset 0 0 3px 3px #006F8E;
+  -webkit-box-shadow: inset 0 0 3px 3px #006F8E;
+  box-shadow: inset 0 0 3px 3px #006F8E;
+}
+
+.pane-openacademy-events-monthly-mini-calendar .calendar-calendar table.mini td.has-events a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/**
+ * Breadcrumbs
+ *
+ * The default is provided by Drupal core
+ */
+
+.breadcrumb {
+  text-shadow: 0 1px 0 #FFFFFF;
+  margin-bottom: 15px;
+}
+
+/**
+ * Tabs
+ */
+.tabs {
+  width:100%;
+  margin:5px 0;
+}
+
+.tabs ul.primary,
+.tabs ul.secondary {
+  padding:0;
+  margin:0;
+  margin-bottom:0;
+  border-bottom:#DADADA solid 1px;
+  width:100%;
+  font-size:0.87em;
+}
+
+.tabs ul.primary li {
+  margin-left:0;
+}
+
+.tabs ul.primary li a {
+  background-color:#DDD;
+  line-height:2em;
+  position:relative;
+  bottom:-4px;
+  border-style:solid;
+  border-color:#DADADA;
+  font-weight:bold;
+  padding:0 25px;
+  text-align:center;
+}
+
+.tabs ul.primary li a.active {
+  background-color:#FFF;
+  border-color:#DADADA #DADADA #FFFFFF;
+}
+
+.tabs ul.primary li a:hover {
+  background-color:#FFF;
+  border-color:#DADADA #DADADA #FFFFFF;
+}
+
+.tabs ul.primary li.active a:hover {
+  background-color:transparent;
+}
+
+.tabs ul.secondary {
+  margin-left:0;
+  margin:0;
+  padding:0.5em 0 0.5em;
+}
+
+.tabs ul.primary {
+  border-bottom: 1px solid #999;
+  -moz-box-shadow: 0 1px #fff;
+  -webkit-box-shadow: 0 1px #fff;
+  box-shadow: 0 1px #fff;
+  margin-top: 2px;
+}
+
+.tabs ul.primary li a {
+  padding: 6px 10px 8px;
+  bottom: 5px;
+  color: #3E3E3E;
+  border: 0;
+  background-color: transparent;
+  font-weight: normal;
+}
+
+.tabs ul.primary li a.active:hover {
+  color: #FFF;
+}
+
+.tabs ul.secondary {
+  border: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.tabs ul.secondary li {
+  border: 0;
+}
+
+.tabs ul.secondary li a {
+  padding: 1px 10px 4px;
+  color: #3E3E3E;
+}
+
+.tabs ul.secondary li.active a {
+  background-color: #CCC;
+  border: 1px solid #999;
+  color: #3E3E3E;
+}
+
+
+/**
+ * Messages 
+ */
+div.messages {
+  padding: 9px;
+  margin: 1em 0;
+  color: #003366;
+  background: #bbddff;
+  border: 0;
+}
+
+div.messages ul {
+  margin-left: 5px;
+}
+
+div.messages ul li {
+  list-style: none;
+  background-position: center left;
+  background-repeat: no-repeat;
+  padding-left: 25px;
+  padding-bottom: 5px;
+}
+
+div.warning {
+  color: #884400;
+  background-color: #F9C600;
+  border-color: #eedd55;
+}
+
+div.messages.warning ul li {
+  color: #CC3300;
+  background-image: url('../images/messages-icon-warning.png');
+}
+
+div.error {
+  color: white;
+  background-color: #CC3300;
+  border-color: #dd5522;
+}
+
+div.messages.error ul li {
+  background-image: url('../images/messages-icon-error.png');
+}
+
+div.status {
+  color: #336600;
+  background-color: #7BBF26;
+  border-color: #bbee77;
+}
+
+div.messages.status ul li {
+  color: #FFF;
+  background-image: url('../images/messages-icon-status.png');
+}
+
+div.messages.help {
+  color: #FFF;
+  background-color: #0098C8;
+}
+
+div.messages.help ul li {
+  background-image: url('../images/messages-icon-help.png');
+}
+
+/**
+ * Read more
+ */
+ 
+.read-more {
+  text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.read-more a:hover {
+  text-decoration: underline;
+  color: #F15A24;
+}

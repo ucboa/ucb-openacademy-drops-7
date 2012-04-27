@@ -1,0 +1,60 @@
+/**
+ * This is for the mini calendar
+ */
+
+/**
+ * This is for the full calendar
+ */
+
+/**
+ * This is for the office hours plugin
+ */
+
+
+ /**
+  * This is for the people grid
+  */
+
+.view-openacademy-people table {
+  margin-top: 0;
+}
+
+.view-openacademy-people td {
+  vertical-align: top;
+  padding-bottom: 1em;
+  width: 160px;
+}
+
+.view-openacademy-people .panopoly-image-square {
+  width: 160px;
+  height: 160px;
+}
+
+.view-openacademy-people h3 {
+  margin: 0;
+}
+
+.view-openacademy-people .views-field-field-person-position,
+.view-openacademy-people .views-field-field-tags a {
+  font-size: 0.9em;
+}
+
+.view-openacademy-people .views-field-field-person-position,
+.view-openacademy-people .views-field-field-tags {
+  line-height: 1.2em;
+}
+
+@media only screen and (max-width: 480px) {
+  .view-openacademy-people .panopoly-image-square {
+    width: 90px;
+    height: 90px;
+  }
+  .view-openacademy-news.view-display-id-featured_news .phelan-container.phelan-column-content .phelan-column2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .view-openacademy-courses.view-display-id-courses_table {
+    font-size: 0.8em;
+  }
+}

@@ -1,0 +1,54 @@
+name        = Open Academy Default Theme
+description = A theme default theme for Open Academy 7.
+screenshot  = screenshot.png
+core        = 7.x
+
+; Fonts
+; fonts[fontsquirrel][] = "bree-serif"
+; fonts[fontsquirrel][] = "news-cycle"
+; fonts[fontsquirrel][] = "open-sans"
+
+; CSS - General
+stylesheets[all][]     = css/defaults.css
+stylesheets[all][]     = css/page.css
+stylesheets[all][]     = css/header.css
+stylesheets[all][]     = css/footer.css
+stylesheets[all][]     = css/panels.css
+stylesheets[all][]     = css/views.css
+stylesheets[all][]     = css/images.css
+stylesheets[all][]     = css/nodes.css
+stylesheets[all][]     = css/widgets.css
+stylesheets[all][]     = css/openacademy-apps.css
+stylesheets[all][]     = css/html-elements.css
+stylesheets[all][]     = css/drupal-elements.css
+stylesheets[all][]     = css/style.css
+stylesheets[print][]   = css/print.css
+
+; CSS - Conditional
+stylesheets-conditional[IE][all][] = css/ie.css
+stylesheets-conditional[lt IE 7][all][] = css/not-ie7.css
+stylesheets-conditional[gt IE 7][all][] = css/not-ie7.css
+
+; CSS - Custom
+stylesheets[all][]     = css/openacademy-default.css
+
+; Javascript
+scripts[] = js/openacademy-default.js
+
+; Regions
+regions[header]       = Header
+regions[help]         = Help
+regions[content]      = Content
+regions[footer]       = Footer
+regions[page_top]     = Page top
+regions[page_bottom]  = Page bottom
+
+; Features
+features[] = logo
+features[] = name
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+
+; Plugins
+plugins[panels][styles] = plugins/styles

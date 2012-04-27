@@ -1,0 +1,88 @@
+/**
+ * @file
+ * Panels styling
+ *
+ * This file is excusively used for styling panel layouts and panes as they
+ * appear in regions at large.  It should not be used for styling the content
+ * within a panel pane
+ */
+
+/**
+ * General Styling of Panel Pane
+ */
+.panel-pane {
+  margin-bottom: 1em;
+} 
+
+.panel-pane h2.pane-title {
+  padding-top: .5em;
+  border-top: 1px solid #fff;
+  -moz-box-shadow: 0 -1px #999;
+  -webkit-box-shadow: 0 -1px #999;
+  box-shadow: 0 -1px #999;
+}
+
+.panel-pane.pane-openacademy-publications-publication-listing h2.pane-title,
+.brown-top-region.brown-slider-gutter .panel-pane h2.pane-title {
+  border-top: 0;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.brown-top-region.brown-slider-gutter .panel-pane h2.pane-title {
+  padding-top: 0;
+}
+
+.panel-pane .views-row.views-row-first h2 {
+  margin-top: 0;
+}
+
+/**
+ * Background Callout
+ */
+.pane-background-callout {
+  background-color: #FFF;
+  padding: 1em;
+}
+
+.region-background-callout {
+  background-color: #FFF;
+  padding: 1em;
+}
+
+.pane-background-callout .panel-pane h2.pane-title,
+.region-background-callout .panel-pane h2.pane-title {
+  border-top: 0;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  padding-top: 0
+}
+
+.region-background-callout .panel-separator {
+  border-top: 1px solid #fff;
+  -moz-box-shadow: 0 -1px #999;
+  -webkit-box-shadow: 0 -1px #999;
+  box-shadow: 0 -1px #999;
+  padding-top: .5em;
+}
+
+
+/** 
+ * Phelan layout overrides
+ */
+.phelan-column-content-region-inner.phelan-column2-inner {
+  padding-right: 10px;
+}
+
+/**
+ * Burr layout overrides
+ */
+.burr-flipped-sidebar.burr-flipped-content-region .region-background-callout {
+  margin-top: 8px;
+}
+
+.burr-sidebar .pane-node-field-event-address iframe {
+  width: 270px;
+}
