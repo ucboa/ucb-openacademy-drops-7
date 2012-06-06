@@ -3,6 +3,10 @@ description = An amazing academic website in a box, customized for UC Berkeley
 version = 7.x-1.0-alpha1
 core = 7.x
 
+;; Essential Dependencies for Testing
+;dependencies[] = apps 
+
+;; Dependencies
 ; Core
 dependencies[] = menu
 dependencies[] = image
@@ -101,6 +105,7 @@ dependencies[] = redis
 ; Contrib - Development
 dependencies[] = devel
 dependencies[] = devel_generate
+dependencies[] = security_review
 
 ; Contrib - Theme
 dependencies[] = conditional_styles
@@ -108,6 +113,10 @@ dependencies[] = respondjs
 dependencies[] = fontyourface
 dependencies[] = fontyourface_ui
 dependencies[] = fontsquirrel
+
+; Contrib UC Berkeley
+dependencies[] = ucb_cas
+dependencies[] = ucb_envconf
 
 ; CSS Stylesheets
 stylesheets[all][] = openacademy.css

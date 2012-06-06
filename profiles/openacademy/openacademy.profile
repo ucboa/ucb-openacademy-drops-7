@@ -9,12 +9,15 @@ function openacademy_install_tasks($install_state) {
 
   // Summon the power of the Apps module
   require_once(drupal_get_path('module', 'apps') . '/apps.profile.inc');
-
-  // Setup a task to verify capability to run apps
-  $tasks['openacademy_apps_check'] = array(
+  
+  //This step is not needed on Pantheon
+  if (strpos($_SERVER['HTTP_HOST'], 'pantheon.') === FALSE) {
+    // Setup a task to verify capability to run apps
+    $tasks['openacademy_apps_check'] = array(
     'display_name' => t('Enable apps support'),
     'type' => 'form',
-  );
+    );
+  }
 
   // Setup the Panopoly Apps install task
   $panopoly_server = array(
@@ -22,16 +25,17 @@ function openacademy_install_tasks($install_state) {
     'default apps' => array(
       'panopoly_admin',
       'panopoly_core',
+      'panopoly_demo',
       'panopoly_images',
       'panopoly_magic',
-      'panopoly_pages',
+      'panopoly_pages', 
       'panopoly_theme',
       'panopoly_widgets',
       'panopoly_wysiwyg',
-    ),
+  ),
     'required apps' => array(
       'panopoly_core',
-    ),
+  ),
   );
   $tasks = $tasks + apps_profile_install_tasks($install_state, $panopoly_server);
   $tasks['apps_profile_apps_select_form_panopoly']['display_name'] = t('Install apps for Panopoly');
@@ -46,15 +50,30 @@ function openacademy_install_tasks($install_state) {
       'openacademy_publications',
       'openacademy_courses',
       'openacademy_people',
-    ),
+  ),
     'required apps' => array(
       'openacademy_core',
-    ),
+  ),
     'default content callback' => 'openacademy_default_content',
   );
   $tasks = $tasks + apps_profile_install_tasks($install_state, $openacademy_server);
   $tasks['apps_profile_apps_select_form_openacademy']['display_name'] = t('Install apps for Open Academy');
 
+  /*
+   * @TODO app server is installing old verisions
+  // Setup the UC Berkeley Apps install task
+  $ucberkeley_server = array(
+    'machine name' => 'ucberkeley',
+    'default apps' => array(),
+    'default apps' => array(
+      'ucb_cas',  
+      'ucb_envconf',
+     ),
+  );
+  $tasks = $tasks + apps_profile_install_tasks($install_state, $ucberkeley_server);
+  $tasks['apps_profile_apps_select_form_ucberkeley']['display_name'] = t('Install apps for UC Berkeley');
+   */
+  
   // Setup the theme selection and configuration tasks
   $tasks['openacademy_theme_form'] = array(
     'display_name' => t('Choose a theme'),
@@ -84,10 +103,6 @@ function openacademy_form_install_configure_form_alter(&$form, $form_state) {
   drupal_get_messages('warning');
 
   // Set reasonable defaults for site configuration form
-  $form['site_information']['site_name']['#default_value'] = 'Department of Open Academy';
-  $form['site_information']['site_mail']['#default_value'] = 'admin@'. $_SERVER['HTTP_HOST']; 
-  $form['admin_account']['account']['name']['#default_value'] = 'admin';
-  $form['admin_account']['account']['mail']['#default_value'] = 'admin@'. $_SERVER['HTTP_HOST'];
   $form['server_settings']['site_default_country']['#default_value'] = 'US';
   $form['server_settings']['date_default_timezone']['#default_value'] = 'America/Los_Angeles'; // West coast, best coast
 }
@@ -121,12 +136,12 @@ function openacademy_install_tasks_alter(&$tasks, $install_state) {
 
   // Insert install task to set theme
   openacademy_maintaince_array_insert(
-    $tasks, 
+  $tasks,
     'install_load_profile', array(
       'openacademy_set_theme' => array(
         'run' => INSTALL_TASK_RUN_IF_REACHED,
-      ),
-    )
+  ),
+  )
   );
 
   // Since we only offer one language, define a callback to set this
@@ -161,7 +176,17 @@ function openacademy_apps_servers_info() {
       'profile_version' => isset($info['version']) ? $info['version'] : '7.x-1.x',
       'server_name' => $_SERVER['SERVER_NAME'],
       'server_ip' => $_SERVER['SERVER_ADDR'],
-    ),
+  ),
+    'ucberkeley' => array(
+      'title' => 'UC Berkeley',
+      'description' => 'Apps for UC Berkeley',
+      'manifest' => 'http://drupal-apps.berkeley.edu/ucberkeley',
+      'profile' => $profile,
+      'profile_version' => isset($info['version']) ? $info['version'] : '7.x-1.x',
+      'server_name' => $_SERVER['SERVER_NAME'],
+      'server_ip' => $_SERVER['SERVER_ADDR'],
+  ),
+
     'panopoly' => array(
       'title' => 'Panopoly',
       'description' => 'Apps for Panopoly',
@@ -170,7 +195,7 @@ function openacademy_apps_servers_info() {
       'profile_version' => isset($info['version']) ? $info['version'] : '7.x-1.x',
       'server_name' => $_SERVER['SERVER_NAME'],
       'server_ip' => $_SERVER['SERVER_ADDR'],
-    ),
+  ),
   );
 }
 
@@ -182,7 +207,7 @@ function openacademy_apps_servers_info() {
 function openacademy_default_content(&$modules) {
   $files = system_rebuild_module_data();
   foreach($modules as $module) {
-    // This assumes a pattern MYMODULE_democontent which is probably not always true. Might be 
+    // This assumes a pattern MYMODULE_democontent which is probably not always true. Might be
     // better to check $_SESSION['apps_manifest'] and check to see if this exists:
     // function_exists($_SESSION['module']['configure form'])
     if (isset($files[$module . '_democontent'])) {
@@ -244,15 +269,17 @@ function openacademy_apps_check($form, &$form_state) {
 
   return $form;
 }
-                
+
 /**
  * Form to choose the starting theme from list of available options
  */
 function openacademy_theme_form($form, &$form_state) {
-
+  // quiet ucb_cas messages
+  drupal_get_messages('status');
+  
   // Set the page title
   drupal_set_title(t('Choose a theme!'));
-  
+
   // Create list of theme options, minus admin + testing + starter themes
   $themes = array();
   foreach(system_rebuild_theme_data() as $theme) {
@@ -265,9 +292,9 @@ function openacademy_theme_form($form, &$form_state) {
     '#title' => t('Starting Theme'),
     '#type' => 'radios',
     '#options' => $themes,
-    '#default_value' => 'openacademy_default',
+    '#default_value' => 'berkeley_base',
   );
-  
+
   $form['actions'] = array(
    '#prefix' => '<div class="form-actions">',
    '#suffix' => '</div>',
@@ -285,12 +312,12 @@ function openacademy_theme_form($form, &$form_state) {
  * Form submit handler to select the theme
  */
 function openacademy_theme_form_submit($form, &$form_state) {
-  
+
   // Enable and set the theme of choice
   $theme = $form_state['input']['theme'];
   theme_enable(array($theme));
   variable_set('theme_default', $theme);
- 
+
   // Flush theme caches so things are right
   system_rebuild_theme_data();
   drupal_theme_rebuild();
@@ -303,10 +330,10 @@ function openacademy_theme_configure_form($form, &$form_state) {
 
   // Set the title
   drupal_set_title(t('Configure theme settings!'));
-  
+
   $theme = variable_get('theme_default');
   ctools_include('system.admin', 'system', '');
-  $form = system_theme_settings($form, $form_state, $theme); 
+  $form = system_theme_settings($form, $form_state, $theme);
   return $form;
 }
 
@@ -314,16 +341,16 @@ function openacademy_theme_configure_form($form, &$form_state) {
  * Form to talk about preparing the site for prime time
  */
 function openacademy_prepare($form, &$form_state) {
-  
-  // Set the title 
+
+  // Set the title
   drupal_set_title(t('Prepare Site'));
-  
+
   $form = array();
 
   $form['openingtext'] = array(
     '#markup' => '<h2>' . t('Open Academy now needs to do a bit more Drupal magic to get everything setup.') . '</h2>',
   );
-  
+
   $form['actions'] = array(
    '#prefix' => '<div class="form-actions">',
    '#suffix' => '</div>',
@@ -351,10 +378,10 @@ function openacademy_prepare_submit($form, &$form_state) {
 
   // Install profiles are always loaded last
   db_update('system')
-    ->fields(array('weight' => 1000))
-    ->condition('type', 'module')
-    ->condition('name', drupal_get_profile())
-    ->execute();
+  ->fields(array('weight' => 1000))
+  ->condition('type', 'module')
+  ->condition('name', drupal_get_profile())
+  ->execute();
 
   // Cache a fully-built schema.
   drupal_get_schema(NULL, TRUE);
@@ -370,21 +397,21 @@ function openacademy_prepare_submit($form, &$form_state) {
  */
 function openacademy_finished_yah($form, &$form_state) {
   $form = array();
-  
+
   //set the title
   drupal_set_title(st('Congratulations!'));
-  
+
   //set the guidelines
   variable_set('openacademy_install_guidelines', '');
 
   $form['openingtext'] = array(
     '#markup' => '<h2 class="bubble">' . t('Congratulations, you just installed Open Academy!') . '<span class="tip"></span></h2>',
   );
-  
+
   $form['openacademysaurus'] = array(
     '#markup' => theme('image', array('path' => drupal_get_path('profile', 'openacademy') . '/images/openacademysaurus-success.png', 'attributes' => array('class' => array('openacademysaurus')))),
   );
-  
+
   $form['actions'] = array(
    '#prefix' => '<div class="form-actions">',
    '#suffix' => '</div>',
@@ -413,8 +440,8 @@ function openacademy_finished_yah_submit($form, &$form_state) {
 }
 
 /**
-* Helper function to adjust an array and put an element right where we want it. 
-*/
+ * Helper function to adjust an array and put an element right where we want it.
+ */
 function openacademy_maintaince_array_insert(&$array, $key, $insert_array, $before = FALSE) {
   $done = FALSE;
   foreach ($array as $array_key => $array_val) {
