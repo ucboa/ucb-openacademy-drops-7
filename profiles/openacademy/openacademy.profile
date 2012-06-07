@@ -9,7 +9,7 @@ function openacademy_install_tasks($install_state) {
 
   // Summon the power of the Apps module
   require_once(drupal_get_path('module', 'apps') . '/apps.profile.inc');
-  
+
   //This step is not needed on Pantheon
   if (strpos($_SERVER['HTTP_HOST'], 'pantheon.') === FALSE) {
     // Setup a task to verify capability to run apps
@@ -61,19 +61,19 @@ function openacademy_install_tasks($install_state) {
 
   /*
    * @TODO app server is installing old verisions
-  // Setup the UC Berkeley Apps install task
-  $ucberkeley_server = array(
-    'machine name' => 'ucberkeley',
-    'default apps' => array(),
-    'default apps' => array(
-      'ucb_cas',  
-      'ucb_envconf',
-     ),
-  );
-  $tasks = $tasks + apps_profile_install_tasks($install_state, $ucberkeley_server);
-  $tasks['apps_profile_apps_select_form_ucberkeley']['display_name'] = t('Install apps for UC Berkeley');
+   // Setup the UC Berkeley Apps install task
+   $ucberkeley_server = array(
+   'machine name' => 'ucberkeley',
+   'default apps' => array(),
+   'default apps' => array(
+   'ucb_cas',
+   'ucb_envconf',
+   ),
+   );
+   $tasks = $tasks + apps_profile_install_tasks($install_state, $ucberkeley_server);
+   $tasks['apps_profile_apps_select_form_ucberkeley']['display_name'] = t('Install apps for UC Berkeley');
    */
-  
+
   // Setup the theme selection and configuration tasks
   $tasks['openacademy_theme_form'] = array(
     'display_name' => t('Choose a theme'),
@@ -276,7 +276,7 @@ function openacademy_apps_check($form, &$form_state) {
 function openacademy_theme_form($form, &$form_state) {
   // quiet ucb_cas messages
   drupal_get_messages('status');
-  
+
   // Set the page title
   drupal_set_title(t('Choose a theme!'));
 
@@ -371,13 +371,13 @@ function openacademy_prepare_submit($form, &$form_state) {
   // Flush all caches to ensure that any full bootstraps during the installer
   // do not leave stale cached data, and that any content types or other items
   // registered by the install profile are registered correctly.
-  drupal_flush_all_caches();
+  @drupal_flush_all_caches();
 
   // Remember the profile which was used.
   variable_set('install_profile', drupal_get_profile());
 
   // Install profiles are always loaded last
-  db_update('system')
+  @db_update('system')
   ->fields(array('weight' => 1000))
   ->condition('type', 'module')
   ->condition('name', drupal_get_profile())
@@ -389,7 +389,7 @@ function openacademy_prepare_submit($form, &$form_state) {
   // Run cron to populate update status tables (if available) so that users
   // will be warned if they've installed an out of date Drupal version.
   // Will also trigger indexing of profile-supplied content or feeds.
-  drupal_cron_run();
+  @drupal_cron_run();
 }
 
 /**
