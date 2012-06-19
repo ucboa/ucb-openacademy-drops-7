@@ -11,7 +11,9 @@ function openacademy_install_tasks($install_state) {
   require_once(drupal_get_path('module', 'apps') . '/apps.profile.inc');
 
   //This step is not needed on Pantheon
-  if (strpos($_SERVER['HTTP_HOST'], 'pantheon.') === FALSE) {
+  
+  //if (strpos($_SERVER['HTTP_HOST'], 'pantheon.') === FALSE) {
+  if (is_writable('sites/all/modules') === FALSE) {
     // Setup a task to verify capability to run apps
     $tasks['openacademy_apps_check'] = array(
     'display_name' => t('Enable apps support'),
@@ -429,6 +431,24 @@ function openacademy_finished_yah($form, &$form_state) {
  * Submit form to finish it out and send us on our way!
  */
 function openacademy_finished_yah_submit($form, &$form_state) {
+  /*
+   * https://beartracks.berkeley.edu/browse/ACADEMY-13
+   * make sure demo content installed
+   */
+  // Do another install of the Default Front Page Content
+  ctools_include('uuid.entity', 'uuid', '');
+  $fpid = db_query('SELECT fpid FROM {fieldable_panels_panes} WHERE uuid= :uuid', array(':uuid' =>'3cf85237-de5c-35b4-095e-64447e9ff6bf'))->fetchField();
+  fieldable_panels_panes_delete($fpid);
+  $fpid = db_query('SELECT fpid FROM {fieldable_panels_panes} WHERE uuid= :uuid', array(':uuid' =>'e663c0b4-8de1-1e54-2133-3de6a740bb8c'))->fetchField();
+  fieldable_panels_panes_delete($fpid);
+  require_once(drupal_get_path('module', 'openacademy_core') .'/openacademy_core_democontent.install');
+  if (function_exists('openacademy_core_democontent_enable')) {
+    openacademy_core_democontent_enable();
+  }
+  /*
+   * End: ACADEMY-13
+   */
+  
   //clean up variables
   variable_del('openacademy_install_guidelines');
 
