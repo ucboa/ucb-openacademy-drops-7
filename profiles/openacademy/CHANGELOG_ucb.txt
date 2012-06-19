@@ -1,0 +1,31 @@
+[General Information about UC Berkeley Open Academy](/drupal/berkeley-open-academy)
+
+Changelog: UC Berkeley Open Academy 
+===================================
+
+Current Features
+----------------
+- Berkeley Base theme enabled by default.
+- UCB CAS module works as soon as the site is installed. No configuration needed.
+- UCB Envrionment Configurations module works as soon as the site is installed.
+- Security Review module included.
+
+Planned Features
+----------------
+- Enhancements to UC Berkeley Base theme (bug fixes, responsive mobile theme)
+
+Release History
+===============
+
+(The install profile version is in profiles/openacademy/openacademy.info.)
+
+openacademy-7.x-1.0-beta1_ucb-1.1-beta1
+---------------------------------------
+- Released: 6/19/2012
+- Fixed: After installation Demo Content missing under About Open Academy and Slide show missing.
+  - https://beartracks.berkeley.edu/browse/ACADEMY-13
+
+openacademy-7.x-1.0-beta1_ucb-1.0-beta1
+---------------------------------------
+- Released: 6/8/2012
+- Initial release
