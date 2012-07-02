@@ -14,6 +14,11 @@ sites/all/modules/devel_themer
 /sites/default/**/files
 /sites/default/**/private
 
+# Open Academy Specific stuff
+# ignore OA adn Panopoly apps
+/sites/all/modules/openacademy_*
+/sites/all/modules/panopoly_*
+
 # security review
 */security_review/IGNOREME.txt
 /profiles/ucb_start/modules/contrib/security_review/IGNOREME.txt
