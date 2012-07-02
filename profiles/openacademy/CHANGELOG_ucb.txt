@@ -19,6 +19,12 @@ Release History
 
 (The install profile version is in profiles/openacademy/openacademy.info.)
 
+openacademy-7.x-1.0-beta1_ucb-1.2-beta1
+---------------------------------------
+- Released: 7/2/2012
+- Fixed:  Content Demo menu broken. Disable Panopoly Demo app.  This is not ready for prime time.
+  - https://beartracks.berkeley.edu/browse/ACADEMY-17
+  
 openacademy-7.x-1.0-beta1_ucb-1.1-beta1
 ---------------------------------------
 - Released: 6/19/2012
