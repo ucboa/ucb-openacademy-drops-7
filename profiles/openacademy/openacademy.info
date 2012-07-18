@@ -114,10 +114,6 @@ dependencies[] = fontyourface
 dependencies[] = fontyourface_ui
 dependencies[] = fontsquirrel
 
-; Contrib UC Berkeley
-dependencies[] = ucb_cas
-dependencies[] = ucb_envconf
-
 ; CSS Stylesheets
 stylesheets[all][] = openacademy.css
 

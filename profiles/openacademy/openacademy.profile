@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * UC Berkeley notes:
+ *
+ * - openacademy_form_apps_profile_apps_select_form_alter(): Update $not_ready as apps improve
+ *  
+ */
 /**
  * Implements hook_install_tasks()
  */
@@ -11,7 +16,7 @@ function openacademy_install_tasks($install_state) {
   require_once(drupal_get_path('module', 'apps') . '/apps.profile.inc');
 
   //This step is not needed on Pantheon
-  
+
   //if (strpos($_SERVER['HTTP_HOST'], 'pantheon.') === FALSE) {
   if (is_writable('sites/all/modules') === FALSE) {
     // Setup a task to verify capability to run apps
@@ -27,7 +32,7 @@ function openacademy_install_tasks($install_state) {
     'default apps' => array(
       'panopoly_admin',
       'panopoly_core',
-      // 'panopoly_demo', //Leave disabled: https://beartracks.berkeley.edu/browse/ACADEMY-17
+  // 'panopoly_demo', //Leave disabled: https://beartracks.berkeley.edu/browse/ACADEMY-17
       'panopoly_images',
       'panopoly_magic',
       'panopoly_pages', 
@@ -61,20 +66,18 @@ function openacademy_install_tasks($install_state) {
   $tasks = $tasks + apps_profile_install_tasks($install_state, $openacademy_server);
   $tasks['apps_profile_apps_select_form_openacademy']['display_name'] = t('Install apps for Open Academy');
 
-  /*
-   * @TODO app server is installing old verisions
-   // Setup the UC Berkeley Apps install task
-   $ucberkeley_server = array(
+  // Setup the UC Berkeley Apps install task
+  $ucberkeley_server = array(
    'machine name' => 'ucberkeley',
    'default apps' => array(),
    'default apps' => array(
    'ucb_cas',
    'ucb_envconf',
-   ),
-   );
-   $tasks = $tasks + apps_profile_install_tasks($install_state, $ucberkeley_server);
-   $tasks['apps_profile_apps_select_form_ucberkeley']['display_name'] = t('Install apps for UC Berkeley');
-   */
+  ),
+  );
+  $tasks = $tasks + apps_profile_install_tasks($install_state, $ucberkeley_server);
+  $tasks['apps_profile_apps_select_form_ucberkeley']['display_name'] = t('Install apps for UC Berkeley');
+
 
   // Setup the theme selection and configuration tasks
   $tasks['openacademy_theme_form'] = array(
@@ -121,8 +124,10 @@ function openacademy_form_apps_profile_apps_select_form_alter(&$form, $form_stat
   // Improve style of apps selection form
   if (isset($form['apps_fieldset'])) {
     $options = array();
+    //TODO: update $not_ready as apps improve
+    $not_ready = array('panopoly_demo', 'panopoly_users', 'panopoly_search');
     foreach($_SESSION['apps_manifest'] as $name => $app) {
-      if ($name != '#theme') {
+      if (($name != '#theme') && (!in_array($name, $not_ready))){
         $options[$name] = '<div class="app-icon">' . theme('image', array('path' => $app['logo']['path'], 'height' => '32', 'width' => '32')) . '</div><strong>' . $app['name'] . '</strong><div class="admin-options">' . $app['description'] . '</div>';
       }
     }
@@ -448,7 +453,7 @@ function openacademy_finished_yah_submit($form, &$form_state) {
   /*
    * End: ACADEMY-13
    */
-  
+
   //clean up variables
   variable_del('openacademy_install_guidelines');
 
