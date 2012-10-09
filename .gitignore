@@ -15,9 +15,7 @@ sites/all/modules/devel_themer
 /sites/default/**/private
 
 # Open Academy Specific stuff
-# ignore OA adn Panopoly apps
-/sites/all/modules/openacademy_*
-/sites/all/modules/panopoly_*
+# ignore UCB Apps
 /sites/all/modules/ucb_*
 
 # security review

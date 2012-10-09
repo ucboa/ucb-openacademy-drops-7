@@ -25,6 +25,7 @@ function openacademy_install_tasks($install_state) {
     );
   }
 
+  /****************
   // Setup the Panopoly Apps install task
   $panopoly_server = array(
     'machine name' => 'panopoly',
@@ -65,6 +66,7 @@ function openacademy_install_tasks($install_state) {
   $tasks = $tasks + apps_profile_install_tasks($install_state, $openacademy_server);
   $tasks['apps_profile_apps_select_form_openacademy']['display_name'] = t('Install apps for Open Academy');
 
+  */
   // Setup the UC Berkeley Apps install task
   $ucberkeley_server = array(
    'machine name' => 'ucberkeley',
@@ -72,6 +74,7 @@ function openacademy_install_tasks($install_state) {
    'default apps' => array(
    'ucb_cas',
    'ucb_envconf',
+   'ucb_smtp',
   ),
   );
   $tasks = $tasks + apps_profile_install_tasks($install_state, $ucberkeley_server);
@@ -174,6 +177,7 @@ function openacademy_apps_servers_info() {
   $profile = variable_get('install_profile', 'openacademy');
   $info =  drupal_parse_info_file(drupal_get_path('profile', $profile) . '/' . $profile . '.info');
   return array(
+  /*
     'openacademy' => array(
       'title' => 'Open Academy',
       'description' => "Apps for Open Academy",
@@ -183,6 +187,7 @@ function openacademy_apps_servers_info() {
       'server_name' => $_SERVER['SERVER_NAME'],
       'server_ip' => $_SERVER['SERVER_ADDR'],
   ),
+  */
     'ucberkeley' => array(
       'title' => 'UC Berkeley',
       'description' => 'Apps for UC Berkeley',
@@ -192,7 +197,7 @@ function openacademy_apps_servers_info() {
       'server_name' => $_SERVER['SERVER_NAME'],
       'server_ip' => $_SERVER['SERVER_ADDR'],
   ),
-
+/*
     'panopoly' => array(
       'title' => 'Panopoly',
       'description' => 'Apps for Panopoly',
@@ -202,6 +207,7 @@ function openacademy_apps_servers_info() {
       'server_name' => $_SERVER['SERVER_NAME'],
       'server_ip' => $_SERVER['SERVER_ADDR'],
   ),
+  */
   );
 }
 

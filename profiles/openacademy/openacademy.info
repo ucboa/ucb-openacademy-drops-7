@@ -1,6 +1,6 @@
 name = UC Berkeley Open Academy
 description = An amazing academic website in a box, customized for UC Berkeley
-version = 7.x-1.0-beta1_ucb-1.3-beta1
+version = 7.x-1.0-beta1_ucb-1.3-beta2
 core = 7.x
 
 ;; Essential Dependencies for Testing
@@ -118,8 +118,32 @@ dependencies[] = fontsquirrel
 ; To ensure delivery to berkeley.edu addresses the SMTP module is required
 dependencies[] = smtp
 
+; Panopoly Apps
+; No longer get these from apps server
+dependencies[] = panopoly_admin
+dependencies[] = panopoly_core
+dependencies[] = panopoly_images
+dependencies[] = panopoly_magic
+dependencies[] = panopoly_pages
+dependencies[] = panopoly_theme
+dependencies[] = panopoly_widgets
+dependencies[] = panopoly_wysiwyg
+
+; OpenAcademy Apps
+; No longer get these from apps server
+dependencies[] = openacademy_core
+dependencies[] = openacademy_news
+dependencies[] = openacademy_events
+dependencies[] = openacademy_publications
+dependencies[] = openacademy_courses
+dependencies[] = openacademy_people
+
 ; CSS Stylesheets
 stylesheets[all][] = openacademy.css
 
 ; Files
 files[] = openacademy.profile
+
+
+
+

@@ -1,0 +1,11 @@
+name = Panopoly Theme
+description = Helps with theming and provides many layouts.
+core = 7.x
+package = Panopoly
+php = 5.2.4
+version = 7.x-1.0-beta3
+project = panopoly_theme
+dependencies[] = image
+features[features_api][] = api:1
+project status url = http://apps.getpantheon.com/fserver
+stylesheets[all][] = css/panopoly_fonts.css
