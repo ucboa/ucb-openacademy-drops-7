@@ -114,6 +114,10 @@ dependencies[] = fontyourface
 dependencies[] = fontyourface_ui
 dependencies[] = fontsquirrel
 
+; Contrib Mail
+; To ensure delivery to berkeley.edu addresses the SMTP module is required
+dependencies[] = smtp
+
 ; CSS Stylesheets
 stylesheets[all][] = openacademy.css
 

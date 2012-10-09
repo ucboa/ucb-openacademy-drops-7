@@ -17,7 +17,6 @@ function openacademy_install_tasks($install_state) {
 
   //This step is not needed on Pantheon
 
-  //if (strpos($_SERVER['HTTP_HOST'], 'pantheon.') === FALSE) {
   if (is_writable('sites/all/modules') === FALSE) {
     // Setup a task to verify capability to run apps
     $tasks['openacademy_apps_check'] = array(
@@ -348,6 +347,8 @@ function openacademy_theme_configure_form($form, &$form_state) {
  * Form to talk about preparing the site for prime time
  */
 function openacademy_prepare($form, &$form_state) {
+  // quiet ucb_smtp messages
+  drupal_get_messages('status');
 
   // Set the title
   drupal_set_title(t('Prepare Site'));
