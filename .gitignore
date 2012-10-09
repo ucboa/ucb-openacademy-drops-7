@@ -18,6 +18,7 @@ sites/all/modules/devel_themer
 # ignore OA adn Panopoly apps
 /sites/all/modules/openacademy_*
 /sites/all/modules/panopoly_*
+/sites/all/modules/ucb_*
 
 # security review
 */security_review/IGNOREME.txt
