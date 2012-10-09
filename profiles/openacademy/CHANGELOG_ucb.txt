@@ -21,6 +21,12 @@ Release History
 
 openacademy-7.x-1.0-beta1_ucb-1.3-beta1
 ---------------------------------------
+- Released: 10/08/2012
+- Pantheon/C3 decommisioning the Panopoly and OpenAcademy appservers. Move these apps into the release
+so that the install doesn't fail.
+
+openacademy-7.x-1.0-beta1_ucb-1.3-beta1
+---------------------------------------
 - Released: 7/18/2012
 - Installation: Don't show the disabled apps to the user.  These are not ready for prime time.
 - Return to using Apps to install UCB CAS and UCB Environments Configurations.
