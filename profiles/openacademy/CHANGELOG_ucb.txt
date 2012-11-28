@@ -3,12 +3,23 @@
 Changelog: UC Berkeley Open Academy 
 ===================================
 
+Advisory
+--------
+This release is a proof of concept. *It is currently not production-ready.*
+
 Current Features
 ----------------
 - Berkeley Base theme enabled by default.
 - UCB CAS module works as soon as the site is installed. No configuration needed.
 - UCB Envrionment Configurations module works as soon as the site is installed.
 - Security Review module included.
+
+Issues
+------
+- Performing Drupal core updates from the Pantheon dashboard may result in errors
+  and a broken site.
+- This is a branch of the 7.x-1.0-beta1 version of [Open Academy](http://drupal.org/project/openacademy).
+  it does not contain all of the features in the most current version of Open Academy.
 
 Planned Features
 ----------------
